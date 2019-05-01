@@ -22,7 +22,7 @@
                     },
                     success: function(data) {
                         if (data == "success") {
-                            alert("Data Berhasil Ditambahkan");
+                            alert("Kontak Berhasil Ditambah");
                             $("#insert").val('submit');
                         } else if (data == "error") {
                             alert("error");
@@ -38,8 +38,8 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <h1 class="title">Tambah Data Nomor Telepon</h1>
-        <a class="button button-clear" href="readjson.html">Daftar Nomor</a>
+        <h1 class="title">Tambah Data Kontak</h1>
+        <a class="button button-clear" href="readjson.html">Daftar Kontak</a>
     </div>
     <br/>
     <br/>
@@ -58,7 +58,7 @@
             <input type="text" id="price" value="" />
         </div>
         <div class="item">
-            <input type="button" id="insert" class="button button-block" value="Insert" />
+            <input type="button" id="insert" class="button button-block" value="Tambah Kontak" />
         </div>
     </div>
 </body>

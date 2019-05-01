@@ -31,7 +31,7 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Edit data berhasil");
+                        alert("Kontak Berhasil diperbaharui");
                         $("#update").val("Update");
                     } else if (data == "error") {
                         alert("error");
@@ -54,7 +54,7 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Hapus data berhasil");
+                        alert("Hapus Kontak berhasil");
                         $("#delete").val("Delete");
                     } else if (data == "error") {
                         alert("error");
@@ -69,9 +69,9 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Tambah Data</a>
-        <h1 class="title">Edit Data</h1>
-        <a class="button button-clear" href="readjson.html">Daftar Nomor</a>
+        <a href="index.html" class="button button-clear">Tambah Kontak</a>
+        <h1 class="title">Pebaharui Kontak</h1>
+        <a class="button button-clear" href="readjson.html">Daftar Kontak</a>
     </div>
     <br/>
     <br/>
@@ -90,8 +90,8 @@
             <input type="text" id="price" value="" />
         </div>
         <div class="item">
-            <input type="button" id="update" class="button button-block" value="Edit Data" />
-            <input type="button" id="delete" class="button button-block" value="Hapus Data" />
+            <input type="button" id="update" class="button button-block" value="Perbaharui Kontak" />
+            <input type="button" id="delete" class="button button-block" value="Hapus Kontak" />
         </div>
     </div>
 </body>
