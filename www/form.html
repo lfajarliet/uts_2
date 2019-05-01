@@ -22,7 +22,7 @@
             var dataString = "id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://kungfumas.000webhostapp.com/update.php",
+                url: "http://masmandakun.000webhostapp.com/cordova1/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -31,7 +31,7 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Updated");
+                        alert("Edit data berhasil");
                         $("#update").val("Update");
                     } else if (data == "error") {
                         alert("error");
@@ -45,7 +45,7 @@
             var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://kungfumas.000webhostapp.com/delete.php",
+                url: "http://masmandakun.000webhostapp.com/cordova1/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -54,7 +54,7 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Deleted");
+                        alert("Hapus data berhasil");
                         $("#delete").val("Delete");
                     } else if (data == "error") {
                         alert("error");
@@ -69,29 +69,29 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="title">Update Database</h1>
-        <a class="button button-clear" href="readjson.html">Read JSON</a>
+        <a href="index.html" class="button button-clear">Tambah Data</a>
+        <h1 class="title">Edit Data</h1>
+        <a class="button button-clear" href="readjson.html">Daftar Nomor</a>
     </div>
     <br/>
     <br/>
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Title</label>
+            <label>Nama</label>
             <input type="text" id="title" value="" />
         </div>
         <div class="item">
-            <label>Duration</label>
+            <label>Alamat</label>
             <input type="text" id="duration" value="" />
         </div>
         <div class="item">
-            <label>Price</label>
+            <label>Nomor</label>
             <input type="text" id="price" value="" />
         </div>
         <div class="item">
-            <input type="button" id="update" class="button button-block" value="Update" />
-            <input type="button" id="delete" class="button button-block" value="Delete" />
+            <input type="button" id="update" class="button button-block" value="Edit Data" />
+            <input type="button" id="delete" class="button button-block" value="Hapus Data" />
         </div>
     </div>
 </body>
