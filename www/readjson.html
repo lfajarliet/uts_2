@@ -4,16 +4,19 @@
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
-    $(document).ready(function() {
-        var url = "https://kungfumas.000webhostapp.com/json.php";
-        $.getJSON(url, function(result) {
+    $(document).ready(function() 
+    {
+        var url = "http://masmandakun.000webhostapp.com/cordova/www/json.php";
+        $.getJSON(url, function(result) 
+        {
             console.log(result);
-            $.each(result, function(i, field) {
+            $.each(result, function(i, field) 
+            {
                 var id = field.id;
                 var title = field.title;
                 var duration = field.duration;
                 var price = field.price;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>$" + price + "</span><h2>" + title + " </h2><p>" + duration + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&title=" + title + "&duration=" + duration + "&price=" + price + "'><span class='item-note'>" + duration + "</span><h2>" + title + " </h2><p>" + price + "</p></a>");
             });
         });
     });
@@ -22,8 +25,8 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="title">Read Database (JSON)</h1>
+        <a href="index.html" class="button button-clear">Tambah Data</a>
+        <h1 class="title">Daftar Nomor</h1>
     </div>
     <br/>
     <br/>
