@@ -3,10 +3,10 @@
  if(isset($_POST['update']))
  {
  $id=$_POST['id'];
- $title=$_POST['title'];
- $duration=$_POST['duration'];
- $price=$_POST['price'];
- $q=mysqli_query($con,"UPDATE `course_details` SET `title`='$title',`duration`='$duration',`price`='$price' where `id`='$id'");
+ $nama=$_POST['nama'];
+ $alamat=$_POST['alamat'];
+ $nomor=$_POST['nomor'];
+ $q=mysqli_query($con,"UPDATE `data_kontak` SET `nama`='$nama',`alamat`='$alamat',`nomor`='$nomor' where `id`='$id'");
  if($q)
  echo "success";
  else
