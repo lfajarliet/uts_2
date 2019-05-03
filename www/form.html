@@ -31,10 +31,10 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Updated");
+                        alert("Kontak Berhasi diperbaharui");
                         $("#update").val("Update");
                     } else if (data == "error") {
-                        alert("error");
+                        alert("Perbaharui Kontak Gagal");
                     }
                 }
             });
@@ -54,7 +54,7 @@
                 },
                 success: function(data) {
                     if (data == "success") {
-                        alert("Deleted");
+                        alert("Hapus Kontak berhasil");
                         $("#delete").val("Delete");
                     } else if (data == "error") {
                         alert("error");
@@ -78,20 +78,20 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>nama</label>
+            <label>Nama</label>
             <input type="text" id="nama" value="" />
         </div>
         <div class="item">
-            <label>alamat</label>
+            <label>Alamat</label>
             <input type="text" id="alamat" value="" />
         </div>
         <div class="item">
-            <label>nomor</label>
+            <label>Nomor</label>
             <input type="text" id="nomor" value="" />
         </div>
         <div class="item">
-            <input type="button" id="update" class="button button-block" value="Update" />
-            <input type="button" id="delete" class="button button-block" value="Delete" />
+            <input type="button" id="update" class="button button-block" value="Perbaharui Kontak" />
+            <input type="button" id="delete" class="button button-block" value="Hapus Kontak" />
         </div>
     </div>
 </body>
