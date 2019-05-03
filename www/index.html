@@ -6,11 +6,11 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var title = $("#title").val();
-            var duration = $("#duration").val();
-            var price = $("#price").val();
-            var dataString = "title=" + title + "&duration=" + duration + "&price=" + price + "&insert=";
-            if ($.trim(title).length > 0 & $.trim(duration).length > 0 & $.trim(price).length > 0) {
+            var nama = $("#nama").val();
+            var alamat = $("#alamat").val();
+            var nomor = $("#nomor").val();
+            var dataString = "nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(alamat).length > 0 & $.trim(nomor).length > 0) {
                 $.ajax({
                     type: "POST",
                     url: "http://masmandakun.000webhostapp.com/cordova1/www/insert.php",
@@ -38,7 +38,7 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <h1 class="title">Tambah Data Kontak</h1>
+        <h1 class="nama">Tambah Data Kontak</h1>
         <a class="button button-clear" href="readjson.html">Daftar Kontak</a>
     </div>
     <br/>
@@ -47,15 +47,15 @@
         <input type="hidden" id="id" value="" />
         <div class="item">
             <label>Nama</label>
-            <input type="text" id="title" value=""  placeholder="Masukan Nama"/>
+            <input type="text" id="nama" value=""  placeholder="Masukan Nama"/>
         </div>
         <div class="item">
             <label>Alamat</label>
-            <input type="text" id="duration" value="" placeholder="Masukan Alamat"/>
+            <input type="text" id="alamat" value="" placeholder="Masukan Alamat"/>
         </div>
         <div class="item">
             <label>Nomor</label>
-            <input type="text" id="price" value="" placeholder="Masukan Nomor"/>
+            <input type="text" id="nomor" value="" placeholder="Masukan Nomor"/>
         </div>
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Tambah Kontak" />
