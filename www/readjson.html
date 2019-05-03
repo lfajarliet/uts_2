@@ -5,15 +5,14 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "http://masmandakun.000webhostapp.com/cordova01/www/json.php";
+        var url = "http://masmandakun.000webhostapp.com/uts_master/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
-                var id = field.id;
                 var nama = field.nama;
                 var alamat = field.alamat;
                 var nomor = field.nomor;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>" + alamat + "</span><h2>" + nama + " </h2><p>" + nomor + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>" + alamat + "</span><h2>" + nama + " </h2><p>" + nomor + "</p></a>");
             });
         });
     });

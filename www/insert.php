@@ -2,10 +2,10 @@
  include "db.php";
  if(isset($_POST['insert']))
  {
- $title=$_POST['title'];
- $duration=$_POST['duration'];
- $price=$_POST['price'];
- $q=mysqli_query($con,"INSERT INTO `course_details` (`title`,`duration`,`price`) VALUES ('$title','$duration','$price')");
+ $nama=$_POST['nama'];
+ $alamat=$_POST['alamat'];
+ $nomor=$_POST['nomor'];
+ $q=mysqli_query($con,"INSERT INTO `dataku` (`nama`,`alamat`,`nomor`) VALUES ('$nama','$alamat','$nomor')");
  if($q)
   echo "success";
  else

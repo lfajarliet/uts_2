@@ -1,9 +1,9 @@
 <?php
  include "db.php";
- if(isset($_GET['id']))
+ if(isset($_GET['nama']))
  {
- $id=$_GET['id'];
- $q=mysqli_query($con,"delete from `data_kontak` where `id`='$id'");
+ $nama=$_GET['nama'];
+ $q=mysqli_query($con,"delete from `dataku` where `nama`='$nama'");
  if($q)
  echo "success";
  else

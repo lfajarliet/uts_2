@@ -1,7 +1,7 @@
 <?php
 include "db.php";
 $data=array();
-$q=mysqli_query($con,"select * from `data_kontak`");
+$q=mysqli_query($con,"select * from `dataku`");
 while ($row=mysqli_fetch_object($q)){
  $data[]=$row;
 }

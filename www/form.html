@@ -6,20 +6,17 @@
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var id = decodeURI(getUrlVars()["id"]);
         var nama = decodeURI(getUrlVars()["nama"]);
         var alamat = decodeURI(getUrlVars()["alamat"]);
         var nomor = decodeURI(getUrlVars()["nomor"]);
-        $("#id").val(id);
         $("#nama").val(nama);
         $("#alamat").val(alamat);
         $("#nomor").val(nomor);
         $("#update").click(function() {
-            var id = $("#id").val();
             var nama = $("#nama").val();
             var alamat = $("#alamat").val();
             var nomor = $("#nomor").val();
-            var dataString = "id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&update=";
+            var dataString =  "nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&update=";
             $.ajax({
                 type: "POST",
                 url: "http://masmandakun.000webhostapp.com/cordova01/www/update.php",
@@ -27,12 +24,12 @@
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#update").val('Connecting...');
+                    $("#update").val('Menyambungkan...');
                 },
                 success: function(data) {
                     if (data == "success") {
                         alert("Kontak Berhasi diperbaharui");
-                        $("#update").val("Update");
+                        $("#update").val("Perbaharui Kontak");
                     } else if (data == "error") {
                         alert("Perbaharui Kontak Gagal");
                     }
@@ -41,21 +38,21 @@
 
         });
         $("#delete").click(function() {
-            var id = $("#id").val();
-            var dataString = "id=" + id + "&delete=";
+            var nama = $("#nama").val();
+            var dataString = "nama=" + nama + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "http://masmandakun.000webhostapp.com/cordova/www/delete.php",
+                url: "http://masmandakun.000webhostapp.com/cordova01/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
                 beforeSend: function() {
-                    $("#delete").val('Connecting...');
+                    $("#delete").val('Menyambungkan...');
                 },
                 success: function(data) {
                     if (data == "success") {
                         alert("Hapus Kontak berhasil");
-                        $("#delete").val("Delete");
+                        $("#delete").val("Hapus Kontak");
                     } else if (data == "error") {
                         alert("error");
                     }
@@ -76,7 +73,6 @@
     <br/>
     <br/>
     <div class="list">
-        <input type="hidden" id="id" value="" />
         <div class="item">
             <label>Nama</label>
             <input type="text" id="nama" value="" />
