@@ -13,7 +13,7 @@
                 var nama = field.nama;
                 var alamat = field.alamat;
                 var nomor = field.nomor;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>$" + nomor + "</span><h2>" + nama + " </h2><p>" + alamat + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>" + alamat + "</span><h2>" + nama + " </h2><p>" + nomor + "</p></a>");
             });
         });
     });
@@ -22,8 +22,8 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Home</a>
-        <h1 class="nama">Read Database (JSON)</h1>
+        <a href="index.html" class="button button-clear">Tambah Kontak</a>
+        <h1 class="title">Daftar Kontak</h1>
     </div>
     <br/>
     <br/>
