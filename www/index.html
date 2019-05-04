@@ -1,10 +1,45 @@
 
 <html>
+<head>
 <title>Kontak Customers</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://masmandakun.000webhostapp.com/cordova01/www/css/fff.css">
-<body>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#insert").click(function() {
+            var id = $("#id").val();
+            var nama = $("#nama").val();
+            var alamat = $("#alamat").val();
+            var nomor = $("#nomor").val();
+            var dataString = "id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(alamat).length > 0 & $.trim(nomor).length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://masmandakun.000webhostapp.com/cordova01/www/insert.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    beforeSend: function() {
+                        $("#insert").val('Connecting...');
+                    },
+                    success: function(data) {
+                        if (data == "success") {
+                            alert("Kontak Berhasil Ditambah");
+                            $("#insert").val('submit');
+                        } else if (data == "error") {
+                            alert("error");
+                        }
+                    }
+                });
+            }
+            return false;
+        });
+    });
+</script>
+</head>
 
+<body>
 <div class="w3-container w3-teal">
   <center><h1>Kontak Customers</h1></center>
 </div>
