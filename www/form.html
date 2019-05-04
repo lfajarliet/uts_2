@@ -1,22 +1,26 @@
 <html>
 
 <head>
+    <title>Kontak Customers</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/geturi.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
+        var id = decodeURI(getUrlVars()["id"]);
         var nama = decodeURI(getUrlVars()["nama"]);
         var alamat = decodeURI(getUrlVars()["alamat"]);
         var nomor = decodeURI(getUrlVars()["nomor"]);
+        $("#id").val(id);
         $("#nama").val(nama);
         $("#alamat").val(alamat);
         $("#nomor").val(nomor);
         $("#update").click(function() {
+            var id = $("#id").val();
             var nama = $("#nama").val();
             var alamat = $("#alamat").val();
             var nomor = $("#nomor").val();
-            var dataString =  "nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&update=";
+            var dataString =  "id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "&update=";
             $.ajax({
                 type: "POST",
                 url: "http://masmandakun.000webhostapp.com/cordova01/www/update.php",
@@ -38,8 +42,8 @@
 
         });
         $("#delete").click(function() {
-            var nama = $("#nama").val();
-            var dataString = "nama=" + nama + "&delete=";
+            var id = $("#id").val();
+            var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
                 url: "http://masmandakun.000webhostapp.com/cordova01/www/delete.php",
@@ -65,14 +69,19 @@
 </head>
 
 <body>
+
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Tambah Kontak</a>
+        <a href="insert.html" class="button button-clear">Tambah Kontak</a>
         <h1 class="title">Perbaharui Kontak</h1>
         <a class="button button-clear" href="readjson.html">Daftar Kontak</a>
     </div>
     <br/>
     <br/>
     <div class="list">
+        <div class="item">
+            <label>Id</label>
+            <input type="text" id="id" value="" />
+        </div>
         <div class="item">
             <label>Nama</label>
             <input type="text" id="nama" value="" />
@@ -90,6 +99,7 @@
             <input type="button" id="delete" class="button button-block" value="Hapus Kontak" />
         </div>
     </div>
+    
 </body>
 
 </html>

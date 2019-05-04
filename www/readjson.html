@@ -1,18 +1,20 @@
 <html>
 
 <head>
+    <title>Kontak Customers</title>
     <link rel="stylesheet" type="text/css" href="css/ionic.css">
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-        var url = "http://masmandakun.000webhostapp.com/uts_master/www/json.php";
+        var url = "http://masmandakun.000webhostapp.com/cordova01/www/json.php";
         $.getJSON(url, function(result) {
             console.log(result);
             $.each(result, function(i, field) {
+                var id = field.id;
                 var nama = field.nama;
                 var alamat = field.alamat;
                 var nomor = field.nomor;
-                $("#listview").append("<a class='item' href='form.html?nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>" + alamat + "</span><h2>" + nama + " </h2><p>" + nomor + "</p></a>");
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&alamat=" + alamat + "&nomor=" + nomor + "'><span class='item-note'>" + alamat + "</span><h2>" + nama + " </h2><p>" + nomor + "</p></a>");
             });
         });
     });
@@ -21,8 +23,9 @@
 
 <body>
     <div class="bar bar-header bar-positive" style="margin-bottom:80px;">
-        <a href="index.html" class="button button-clear">Tambah Kontak</a>
+        <a href="index.php" class="button button-clear">Home</a>
         <h1 class="title">Daftar Kontak</h1>
+        <a href="insert.html" class="button button-clear">Tambah Kontak</a>
     </div>
     <br/>
     <br/>
